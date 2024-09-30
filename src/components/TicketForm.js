@@ -20,8 +20,18 @@ export default function TicketForm() {
   const handleSubmit = (e) => {
     // preventDefault make sure that the page don´t get reload it!
     e.preventDefault();
+
+    const ticketData = {
+      id: Math.floor(Math.random() * 100),
+      title,
+      description,
+      priority,
+    };
+
     clearForm();
   };
+
+
 
   return (
     <form onSubmit={handleSubmit} className="ticket-form">
