@@ -14,16 +14,32 @@ export default function ticketReducer(state, action) {
         tickets: state.tickets.map((ticket) =>
           ticket.id === action.payload.id ? action.payload : ticket
         ),
+        editingTicket: null,
       };
 
     case "DELETE_TICKET":
-      return {
-        ...state,
-        tickets: state.tickets.filter(
-          (ticket) => ticket.id !== action.payload.id
-        ),
-      };
-
+      /*
+        Case that we delete the ticket that we are editing.
+       */
+      if (state.editingTicket && state.editingTicket.id === action.payload.id){
+        return {
+          ...state,
+          tickets: state.tickets.filter(
+            (ticket) => ticket.id !== action.payload.id
+          ),
+          editingTicket: null,
+        };
+      } else {
+        /*
+          Case that we delete a ticket and not editing any ticket
+         */
+        return {
+          ...state,
+          tickets: state.tickets.filter(
+            (ticket) => ticket.id !== action.payload.id
+          )
+        };
+      }
     case "SET_EDITING_TICKET":
       return {
         ...state,
