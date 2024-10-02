@@ -7,6 +7,7 @@ export default function ticketReducer(state, action) {
       //
       // tickets: contains the change that we wanna make.
       return { ...state, tickets: [...state.tickets, action.payload] };
+
     case "UPDATE_TICKET":
       return {
         ...state,
@@ -14,6 +15,7 @@ export default function ticketReducer(state, action) {
           ticket.id === action.payload.id ? action.payload : ticket
         ),
       };
+
     case "DELETE_TICKET":
       return {
         ...state,
@@ -21,6 +23,19 @@ export default function ticketReducer(state, action) {
           (ticket) => ticket.id !== action.payload.id
         ),
       };
+
+    case "SET_EDITING_TICKET":
+      return {
+        ...state,
+        editingTicket: action.payload,
+      };
+
+    case "CLEAR_EDITING_TICKET":
+      return {
+        ...state,
+        editingTicket: null,
+      };
+
     default:
       return state;
   }
