@@ -44,6 +44,8 @@ export default function TicketForm({ dispatch, editingTicket }) {
       payload: ticketData,
     });
 
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+
     clearForm();
   };
 
