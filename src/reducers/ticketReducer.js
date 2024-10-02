@@ -21,7 +21,7 @@ export default function ticketReducer(state, action) {
       /*
         Case that we delete the ticket that we are editing.
        */
-      if (state.editingTicket && state.editingTicket.id === action.payload.id){
+      if (state.editingTicket && state.editingTicket.id === action.payload.id) {
         return {
           ...state,
           tickets: state.tickets.filter(
@@ -37,7 +37,7 @@ export default function ticketReducer(state, action) {
           ...state,
           tickets: state.tickets.filter(
             (ticket) => ticket.id !== action.payload.id
-          )
+          ),
         };
       }
     case "SET_EDITING_TICKET":
@@ -50,6 +50,12 @@ export default function ticketReducer(state, action) {
       return {
         ...state,
         editingTicket: null,
+      };
+
+    case "SET_SORTING":
+      return {
+        ...state,
+        sortPreference: action.payload,
       };
 
     default:
