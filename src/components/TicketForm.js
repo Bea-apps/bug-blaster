@@ -93,7 +93,7 @@ export default function TicketForm({ dispatch, editingTicket }) {
         ))}
       </fieldset>
       <button type="submit" className="button">
-        Submit
+        Add
       </button>
 
       {editingTicket && (

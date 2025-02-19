@@ -1,3 +1,8 @@
+# About the Project
+
+This project is an application for document the bugs. The application allows you to add bugs with title, description and priority.
+It´s also possible to order the bugs by priority (low, medium, high) from low to high and high to low.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
