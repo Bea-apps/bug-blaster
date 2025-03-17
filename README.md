@@ -1,7 +1,7 @@
 # About the Project
 
 This project is an application for document the bugs. The application allows you to add bugs with title, description and priority.
-It´s also possible to order the bugs by priority (low, medium, high) from low to high and high to low.
+It´s also possible to order the bugs by priority (low, medium, high) from low to high and high to low. Node version 18.19.1
 
 # Getting Started with Create React App
 
